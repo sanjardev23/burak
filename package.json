@@ -6,14 +6,17 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "start:dev": "nodemon --exec ts-node src/server.ts",
-    "start:train": "nodemon --exec ts-node src/train.ts",
+    "train": "nodemon --exec ts-node src/train.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "SIMON",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.30.1"
+    "dotenv": "^16.0.0",
+    "moment": "^2.30.1",
+    "mongoose": "^8.24.0",
+    "mongose": "^0.0.2-security"
   },
   "devDependencies": {
     "nodemon": "^3.1.14",
