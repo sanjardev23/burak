@@ -43,8 +43,22 @@ function getSquareNumbers(arr: any[]) {
 
 const input = [2, 5, 9];
 const result = getSquareNumbers(input);
-console.log(result);
+// console.log(result);
 
+
+
+
+
+// N-TASK
+function palindromCheck(str: string) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+
+console.log(palindromCheck("racecar")); 
+console.log(palindromCheck("dad")); 
+console.log(palindromCheck("kiyik")); 
+console.log(palindromCheck("kiyii")); 
 
 
 
