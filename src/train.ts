@@ -24,4 +24,27 @@ const reversedWords = sentence.split(" ")
   .map((word: string) => word.split("").reverse().join(""))
   .join(" ");
 
-console.log(reversedWords); 
+// console.log(reversedWords); 
+
+
+
+
+
+
+// M-TASK
+function getSquareNumbers(arr: any[]) {
+  return arr.map(num => {
+    return {
+      number: num,
+      square: num * num 
+    };
+  });
+}
+
+const input = [2, 5, 9];
+const result = getSquareNumbers(input);
+console.log(result);
+
+
+
+
