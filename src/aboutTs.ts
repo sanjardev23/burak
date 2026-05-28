@@ -62,3 +62,29 @@ class Person {
 }
 
 const person = new Person(30, 'Simon', 'Robert')
+
+
+
+
+// Architectural pattern: MVC, Dependency Injection, MVP
+
+// MVC = MODEL VIEW CONTROLLER
+
+// Design pattern: Middleware, Decorator
+
+
+// Burak - MVC Pattern
+// Nestar - MVC Pattern, Dependency Injection, Decorator Pattern ...
+
+
+ 
+// OOP - Object Orienter Programming
+// AOP - Aspect Oriented Programming
+// FRP - Functional Reactive Programming
+
+
+// CLUSTER => DATABASE => COLLECTION => DOCUMENT
+
+
+import moment from 'moment';            // this is in module js
+// const moment = require('moment');    // this is in common js
