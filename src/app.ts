@@ -1,6 +1,7 @@
 import express from 'express';
 import path from "path";
 import router from './router';
+import routerAdmin from './routerAdmin';
 
 /** 1-ENTARANCE **/
 const app = express();
@@ -16,7 +17,16 @@ app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "ejs")
 
 /** 4-ROUTES **/
-app.use("/", router);       // Middleware Design Pattern
+// Middleware Design Pattern
+
+app.use("/admin", routerAdmin);     // BSSR: EJS (backend server side render)
+app.use("/", router);               // SPA: REACT (single page application) 
 
 
-export default app;         // module.exports = app (similar to this)
+export default app;       
+
+
+
+
+
+// REACT loyiha uchun router tizimi
