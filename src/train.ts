@@ -55,14 +55,28 @@ function palindromCheck(str: string) {
   return str === reversed;
 }
 
-console.log(palindromCheck("racecar")); 
-console.log(palindromCheck("dad")); 
-console.log(palindromCheck("kiyik")); 
-console.log(palindromCheck("kiyii")); 
+// console.log(palindromCheck("racecar")); 
+// console.log(palindromCheck("dad")); 
+// console.log(palindromCheck("kiyik")); 
+// console.log(palindromCheck("kiyii")); 
 
 
 
 
-
-
+// O-TASK
+function calculateSumOfNumbers(arr: (string | number | boolean | { son: number; })[]) {
+  let sum = 0;
+ 
+  for (let item of arr) {
+      if (typeof item === "number") {
+          sum += item;
+      }
+  }
+ 
+  return sum;
+}
+ 
+console.log(
+  calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])
+); 
 
