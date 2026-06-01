@@ -3,7 +3,7 @@
     - Naming standards
         function, method, variable => CAMELCASE      goHome
         class => PASCAL                              MemberService
-        folder => KEBAB                              count-vowels
+        folder, file => KEBAB                              count-vowels
         css => SNAKE                                 button_style 
     - Error handling
                 
