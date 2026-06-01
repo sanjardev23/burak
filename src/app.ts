@@ -5,31 +5,29 @@ import routerAdmin from './router-admin';
 import morgan from 'morgan'
 import { MORGAN_FORMAT } from './libs/config';
 
-/** 1-ENTARANCE **/
+/** 1 - CREATE THE APP **/
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-app.use(morgan(MORGAN_FORMAT))
+
+app.use(express.static(path.join(__dirname, "public")));  // serves static files (images, css, js) from /public folder
+app.use(express.urlencoded({ extended: true }));           // lets express read data sent from HTML forms
+app.use(express.json());                                   // lets express read JSON data sent from React/API
+app.use(morgan(MORGAN_FORMAT))                             // logs every request in terminal (method, url, status, time)
 
 
-/** 2-SESSIONS **/
+/** 2 - SESSIONS **/
+// (not set up yet — will be used to keep users logged in)
 
-/** 3-VIEWS **/
-app.set('views', path.join(__dirname, 'views'))
-app.set("view engine", "ejs")
+/** 3 - VIEWS (Admin panel templates) **/
+app.set('views', path.join(__dirname, 'views'))  // tells express where the EJS template files live
+app.set("view engine", "ejs")                    // sets EJS as the HTML engine (used only for admin pages)
 
-/** 4-ROUTES **/
-// Middleware Design Pattern
+/** 4 - ROUTES **/
+// Every incoming request is passed to one of these two routers:
 
-app.use("/admin", routerAdmin);     // BSSR: EJS (backend server side render)
-app.use("/", router);               // SPA: REACT (single page application) 
-
-
-export default app;       
+app.use("/admin", routerAdmin);  // /admin/* → admin router (server-side EJS pages)
+app.use("/", router);            // /* → main router (React single page app)
 
 
-
-
+export default app;
 
 // REACT loyiha uchun router tizimi

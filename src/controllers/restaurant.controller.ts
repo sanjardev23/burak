@@ -6,16 +6,19 @@ import { MemberType } from '../libs/enums/member.enum';
 
 
 const restaurantController: T = {}
+
+// GET /admin/  →  just sends "Home Page" text for now
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
         console.log('goHome')
         res.send('Home Page');
-        // send | json | redirect | end | render => response methods
+        // response options: send | json | redirect | end | render
     } catch (err) {
         console.log("Error on goHome", err);
     }
 }
 
+// GET /admin/login  →  shows the login page
 restaurantController.getLogin = (req: Request, res: Response) => {
     try {
         console.log('getLogin')
@@ -25,6 +28,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
     }
 }
 
+// GET /admin/signup  →  shows the signup page
 restaurantController.getSignup = (req: Request, res: Response) => {
     try {
         console.log('getSignup')
@@ -34,7 +38,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     }
 }
 
-
+// POST /admin/login  →  receives login form data and processes it
 restaurantController.processLogin = (req: Request, res: Response) => {
     try {
         console.log('processLogin')
@@ -44,20 +48,22 @@ restaurantController.processLogin = (req: Request, res: Response) => {
     }
 }
 
+// POST /admin/signup  →  receives signup form data, saves a new restaurant to MongoDB
 restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
         console.log('processSignup')
 
-        const newMember: MemberInput = req.body
-        newMember.memberType = MemberType.RESTAURANT;
+        const newMember: MemberInput = req.body          // get form data sent from the browser
+        newMember.memberType = MemberType.RESTAURANT;    // force the type to RESTAURANT
 
-        const memberService = new MemberService
-        const result = await memberService.processSignup(newMember);
+        const memberService = new MemberService          // create instance of the service
+        const result = await memberService.processSignup(newMember); // call the service to save to DB
 
-        res.send(result);
+        res.send(result); // send the created member back as a response
     } catch (err) {
         console.log("Error on processSignup", err);
         res.send(err)
     }
 }
+
 export default restaurantController;
