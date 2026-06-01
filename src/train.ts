@@ -106,3 +106,13 @@ console.log(
 ); 
 
  
+
+
+// P-TASK
+function objectToArray(obj: Record<string, number>): [string, number][] {
+  return Object.entries(obj);
+}
+
+const natija = objectToArray({ a: 10, b: 20 });
+console.log('natija:', natija)
+
