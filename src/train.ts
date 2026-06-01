@@ -1,13 +1,31 @@
+/* Project Standat 
+    - Logging standards
+    - Naming standards
+        function, method, variable => CAMELCASE      goHome
+        class => PASCAL                              MemberService
+        folder => KEBAB                              count-vowels
+        css => SNAKE                                 button_style 
+    - Error handling
+                
+*/
+
+
+
+
+
+
 // K-TASK
-function countVowels(str:string): number {
+
+function countVowels(str: string): number {
   let count = 0;
   const vowels = "aeiouAEIOU";
 
   for (let char of str) {
-    if (vowels.includes(char)) {
-      count++;
-    }
+      if (vowels.includes(char)) {
+          count++;
+      }
   }
+
   return count;
 }
 
@@ -80,3 +98,4 @@ console.log(
   calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])
 ); 
 
+ 
