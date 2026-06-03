@@ -19,6 +19,16 @@
 
 
 
+/** 
+  Traditional Frontend Development  => BSSR (Adminka)           => EJS
+  Modern Frontend Development       => SPA  (Users application) => REACT
+**/
+
+
+
+
+
+
 
 
 // K-TASK

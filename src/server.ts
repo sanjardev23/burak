@@ -1,3 +1,8 @@
+/**
+ * Purpose:  Entry point — connects to MongoDB, then starts the Express server
+ * Flow:     node server.ts → MongoDB connects → app.listen() → ready
+*/
+
 import dotenv from 'dotenv';
 dotenv.config(); // reads your .env file and loads variables like MONGO_URL, PORT into process.env
 

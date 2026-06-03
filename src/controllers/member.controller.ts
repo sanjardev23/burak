@@ -1,4 +1,3 @@
-import { Request, Response } from 'express';
 import { T } from "../libs/types/common";
 
 // This controller handles routes for regular users (React frontend)

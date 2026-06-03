@@ -88,3 +88,18 @@ const person = new Person(30, 'Simon', 'Robert')
 
 import moment from 'moment';            // this is in module js
 // const moment = require('moment');    // this is in common js
+
+
+
+
+
+// BSSR
+// Client     --> Server,    Server --> Ready HTML
+// Browser displays page
+
+
+// Single Page Application
+// Client --> Server,            Server --> Empty HTML + JS
+// JavaScript runs in browser
+// Client --> API Server,        API Server --> JSON Data
+// JS builds UI in browser

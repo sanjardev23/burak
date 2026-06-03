@@ -1,3 +1,10 @@
+/**
+ * Purpose:  Maps all /admin/* URLs to the correct restaurant controller method
+ * Called by: app.ts — app.use("/admin", routerAdmin)
+ * Sends to:  restaurant.controller.ts
+ * Flow:     Browser → /admin/* → routerAdmin → restaurantController → Service → DB
+*/
+
 import express from 'express';
 const routerAdmin = express.Router(); // creates a mini-router just for admin pages
 import restaurantController from './controllers/restaurant.controller';
