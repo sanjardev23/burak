@@ -101,9 +101,7 @@ function calculateSumOfNumbers(arr: (string | number | boolean | { son: number; 
   return sum;
 }
  
-console.log(
-  calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])
-); 
+// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); 
 
  
 
@@ -114,5 +112,16 @@ function objectToArray(obj: Record<string, number>): [string, number][] {
 }
 
 const natija = objectToArray({ a: 10, b: 20 });
-console.log('natija:', natija)
+// console.log('natija:', natija)
 
+
+
+
+
+// Q-TASK
+function hasProperty(obj: object, key: string): boolean {
+  return key in obj;
+}
+
+console.log(hasProperty({name: "Porsche", model: "Taycan"}, "model")); 
+console.log(hasProperty({name: "Porsche", model: "Taycan"}, "year"));  
