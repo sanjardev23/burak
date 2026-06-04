@@ -23,10 +23,14 @@ export enum Message {
 }
 
 // Custom error class — combines an HTTP code + a message into one object
-// Usage: throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND)
 class Errors extends Error {
     public code: HttpCode;
     public message: Message;
+
+    static standart = {
+        code: HttpCode.INTERNAL_SERVER_ERROR,
+        message: Message.SOMETHING_WENT_WRONG
+    }
 
     constructor(statusCode: HttpCode, statusMessage: Message) {
         super();
