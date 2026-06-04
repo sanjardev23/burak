@@ -8,11 +8,10 @@ const memberService = new MemberService          // create instance of the servi
 
 const restaurantController: T = {}
 
-// GET /admin/  →  just sends "Home Page" text for now
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
         console.log('goHome')
-        res.send('Home Page');
+        res.render("home");
         // response options: send | json | redirect | end | render
     } catch (err) {
         console.log("Error on goHome", err);
@@ -23,7 +22,7 @@ restaurantController.goHome = (req: Request, res: Response) => {
 restaurantController.getSignup = (req: Request, res: Response) => {
     try {
         console.log('getSignup')
-        res.send('Signup Page');
+        res.render("signup");
     } catch (err) {
         console.log("Error on getSignup", err);
     }
@@ -33,7 +32,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
 restaurantController.getLogin = (req: Request, res: Response) => {
     try {
         console.log('getLogin')
-        res.send('Login Page');
+        res.render("login");
     } catch (err) {
         console.log("Error on getLogin", err);
     }

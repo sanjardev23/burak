@@ -6,11 +6,11 @@
 */
 
 import express from 'express';
-const routerAdmin = express.Router(); // creates a mini-router just for admin pages
+const routerAdmin = express.Router();                       // creates a mini-router just for admin pages
 import restaurantController from './controllers/restaurant.controller';
 
 
-/** Restaurant routes **/
+/** Restaurant **/
 routerAdmin.get("/", restaurantController.goHome);          // GET  /admin/        → shows admin home page
 
 routerAdmin
@@ -22,10 +22,9 @@ routerAdmin
     .post("/signup", restaurantController.processSignup);   // POST /admin/signup  → handles signup form submission
 
 
-/** Product routes (coming soon) **/
-/** User routes (coming soon) **/
+/** Product routes  **/
+/** User routes  **/
 
 
 export default routerAdmin;
 
-// Adminka loyiha uchun router tizimi
