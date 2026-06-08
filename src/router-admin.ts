@@ -22,6 +22,8 @@ routerAdmin
     .post("/signup", restaurantController.processSignup);   // POST /admin/signup  → handles signup form submission
 
 
+routerAdmin.get("/check-me", restaurantController.checkAuthSession);  
+
 /** Product routes  **/
 /** User routes  **/
 
