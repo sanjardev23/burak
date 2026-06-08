@@ -133,5 +133,18 @@ function hasProperty(obj: object, key: string): boolean {
   return key in obj;
 }
 
-console.log(hasProperty({name: "Porsche", model: "Taycan"}, "model")); 
-console.log(hasProperty({name: "Porsche", model: "Taycan"}, "year"));  
+// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "model")); 
+// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "year"));  
+
+
+
+// M-TASK
+function calculate(str: string): number {
+  return str
+    .split("+")
+    .reduce((sum: number, num: string) => sum + Number(num), 0);
+}
+
+console.log(calculate("1+3"));      
+console.log(calculate("1+2+3"));    
+console.log(calculate("10+20+30")); 
