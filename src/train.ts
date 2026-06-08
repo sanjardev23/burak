@@ -27,6 +27,13 @@
 
 
 
+/**
+  request join
+  self destroy
+ */
+
+
+
 
 
 
@@ -147,4 +154,3 @@ function calculate(str: string): number {
 
 console.log(calculate("1+3"));      
 console.log(calculate("1+2+3"));    
-console.log(calculate("10+20+30")); 

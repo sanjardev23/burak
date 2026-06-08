@@ -20,8 +20,7 @@ routerAdmin
 routerAdmin
     .get("/signup", restaurantController.getSignup)         // GET  /admin/signup  → shows the signup form
     .post("/signup", restaurantController.processSignup);   // POST /admin/signup  → handles signup form submission
-
-
+routerAdmin.get("/logout", restaurantController.logout);  
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);  
 
 /** Product routes  **/
