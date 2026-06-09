@@ -152,5 +152,20 @@ function calculate(str: string): number {
     .reduce((sum: number, num: string) => sum + Number(num), 0);
 }
 
-console.log(calculate("1+3"));      
-console.log(calculate("1+2+3"));    
+// console.log(calculate("1+3"));      
+// console.log(calculate("1+2+3"));    
+
+
+
+
+// S-TASK
+function missingNumber(arr: number[]): number {
+    for (let i = 0; i <= arr.length; i++) {
+        if (!arr.includes(i)) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(missingNumber([0, 1, 2, 4, 3])); 
