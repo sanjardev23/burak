@@ -8,6 +8,7 @@
 import express from 'express';
 const routerAdmin = express.Router();                       // creates a mini-router just for admin pages
 import restaurantController from './controllers/restaurant.controller';
+import productController from './controllers/product.controller';
 
 
 /** Restaurant **/
@@ -24,6 +25,10 @@ routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);  
 
 /** Product routes  **/
+routerAdmin.get("/product/all", productController.getAllProducts);  
+routerAdmin.post("/product/create", productController.createNewProduct);
+routerAdmin.post("/product/:id", productController.updateChosenProduct);
+
 /** User routes  **/
 
 
