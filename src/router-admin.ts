@@ -9,6 +9,7 @@ import express from "express";
 const routerAdmin = express.Router(); // creates a mini-router just for admin pages
 import restaurantController from "./controllers/restaurant.controller";
 import productController from "./controllers/product.controller";
+import makeUploader from "./libs/utils/uploader";
 
 /** Restaurant **/
 routerAdmin.get("/", restaurantController.goHome); // GET  /admin/        → shows admin home page
@@ -19,7 +20,11 @@ routerAdmin
 
 routerAdmin
   .get("/signup", restaurantController.getSignup) // GET  /admin/signup  → shows the signup form
-  .post("/signup", restaurantController.processSignup); // POST /admin/signup  → handles signup form submission
+  .post(
+    "/signup",
+    makeUploader("members").single("memberImage"),
+    restaurantController.processSignup,          // POST /admin/signup  → handles signup form submission
+  );
 routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
@@ -32,6 +37,7 @@ routerAdmin.get(
 routerAdmin.post(
   "/product/create",
   restaurantController.verifyRestaurant,
+  makeUploader("products").array("productImages", 2),
   productController.createNewProduct,
 );
 routerAdmin.post(
