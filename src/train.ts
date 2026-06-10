@@ -9,28 +9,28 @@
                 
 */
 
+/* Request:
+   Traditinal Api
+   Rest Api
+   GraphQL Api
+   ...
+*/
 
-/** 
-  Traditional API
-  Rest API
-  GraphQL API
-  ...
-**/
+/* Frontend Development:
+   Traditional FD  => SSR  => EJS
+   Modern FD       => SPA  => REACT
+*/
 
+/* Cookies:
+   request join
+   self destroy
+*/
 
-
-/** 
-  Traditional Frontend Development  => BSSR (Adminka)           => EJS
-  Modern Frontend Development       => SPA  (Users application) => REACT
-**/
-
-
-
-
-/**
-  request join
-  self destroy
- */
+/* Validation:
+   Frontend validation
+   Backend validation
+   Database validation
+*/
 
 
 
