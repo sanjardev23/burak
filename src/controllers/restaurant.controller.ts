@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service"
 import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
-import Errors, { Message } from '../libs/Errors';
+import Errors, { HttpCode, Message } from '../libs/Errors';
 
 const memberService = new MemberService          // create instance of the service
 
@@ -50,14 +50,18 @@ restaurantController.processSignup = async (
 ) => {
     try {
         console.log('processSignup')
+        const file = req.file;
+        if (!file)
+            throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG)
 
         const newMember: MemberInput = req.body          // get form data sent from the browser
+        newMember.memberImage = file?.path;
         newMember.memberType = MemberType.RESTAURANT;    // force the type to RESTAURANT
         const result = await memberService.processSignup(newMember); // call the service to save to DB
-        // TODO: SESSIONS AUTHENTICATION
+        // SESSIONS AUTHENTICATION
         req.session.member = result;
         req.session.save(function () {
-            res.send(result)
+            res.redirect("/admin/product/all");
         });
     } catch (err) {
         console.log("Error on processSignup", err);
@@ -75,10 +79,11 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
         console.log('processLogin')
         const input: LoginInput = req.body;
         const result = await memberService.processLogin(input)
-        // TODO: SESSIONS AUTHENTICATION
+        // SESSIONS AUTHENTICATION
         req.session.member = result;
         req.session.save(function () {
-            res.send(result)
+            res.redirect("/admin/product/all");
+
         });
     } catch (err) {
         console.log("Error on processLogin", err);
