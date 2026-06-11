@@ -168,4 +168,13 @@ function missingNumber(arr: number[]): number {
     return -1;
 }
 
-console.log(missingNumber([0, 1, 2, 4, 3])); 
+// console.log(missingNumber([0, 1, 2, 4, 3])); 
+
+
+
+// T-TASK
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+    return arr1.concat(arr2).sort((a, b) => a - b);
+}
+
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
