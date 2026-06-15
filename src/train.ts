@@ -35,26 +35,23 @@
 
 
 
-
-
-
 // K-TASK
-
 function countVowels(str: string): number {
   let count = 0;
   const vowels = "aeiouAEIOU";
 
   for (let char of str) {
-      if (vowels.includes(char)) {
-          count++;
-      }
+    if (vowels.includes(char)) {
+      count++;
+    }
   }
 
   return count;
 }
 
-// console.log(countVowels("Uzbekistan")); 
-// console.log(countVowels("SIMON")); 
+// console.log(countVowels("Uzbekistan"));
+// console.log(countVowels("SIMON"));
+
 
 
 
@@ -62,23 +59,21 @@ function countVowels(str: string): number {
 // L-TASK
 const sentence = "we like coding";
 
-const reversedWords = sentence.split(" ")
+const reversedWords = sentence
+  .split(" ")
   .map((word: string) => word.split("").reverse().join(""))
   .join(" ");
 
-// console.log(reversedWords); 
-
-
-
+// console.log(reversedWords);
 
 
 
 // M-TASK
 function getSquareNumbers(arr: any[]) {
-  return arr.map(num => {
+  return arr.map((num) => {
     return {
       number: num,
-      square: num * num 
+      square: num * num,
     };
   });
 }
@@ -89,38 +84,36 @@ const result = getSquareNumbers(input);
 
 
 
-
-
 // N-TASK
 function palindromCheck(str: string) {
-  const reversed = str.split('').reverse().join('');
+  const reversed = str.split("").reverse().join("");
   return str === reversed;
 }
 
-// console.log(palindromCheck("racecar")); 
-// console.log(palindromCheck("dad")); 
-// console.log(palindromCheck("kiyik")); 
-// console.log(palindromCheck("kiyii")); 
-
+// console.log(palindromCheck("racecar"));
+// console.log(palindromCheck("dad"));
+// console.log(palindromCheck("kiyik"));
+// console.log(palindromCheck("kiyii"));
 
 
 
 // O-TASK
-function calculateSumOfNumbers(arr: (string | number | boolean | { son: number; })[]) {
+function calculateSumOfNumbers(
+  arr: (string | number | boolean | { son: number })[],
+) {
   let sum = 0;
- 
+
   for (let item of arr) {
-      if (typeof item === "number") {
-          sum += item;
-      }
+    if (typeof item === "number") {
+      sum += item;
+    }
   }
- 
+
   return sum;
 }
- 
-// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35])); 
 
- 
+// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
+
 
 
 // P-TASK
@@ -140,8 +133,8 @@ function hasProperty(obj: object, key: string): boolean {
   return key in obj;
 }
 
-// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "model")); 
-// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "year"));  
+// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "model"));
+// console.log(hasProperty({name: "Porsche", model: "Taycan"}, "year"));
 
 
 
@@ -152,29 +145,48 @@ function calculate(str: string): number {
     .reduce((sum: number, num: string) => sum + Number(num), 0);
 }
 
-// console.log(calculate("1+3"));      
-// console.log(calculate("1+2+3"));    
-
+// console.log(calculate("1+3"));
+// console.log(calculate("1+2+3"));
 
 
 
 // S-TASK
 function missingNumber(arr: number[]): number {
-    for (let i = 0; i <= arr.length; i++) {
-        if (!arr.includes(i)) {
-            return i;
-        }
+  for (let i = 0; i <= arr.length; i++) {
+    if (!arr.includes(i)) {
+      return i;
     }
-    return -1;
+  }
+  return -1;
 }
 
-// console.log(missingNumber([0, 1, 2, 4, 3])); 
+// console.log(missingNumber([0, 1, 2, 4, 3]));
 
 
 
 // T-TASK
 function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-    return arr1.concat(arr2).sort((a, b) => a - b);
+  return arr1.concat(arr2).sort((a, b) => a - b);
 }
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+
+
+// U-TASK
+function sumOdds(num: number) {
+  let count = 0;
+
+  for (let i = 0; i < num; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(sumOdds(9));
+console.log(sumOdds(11));
+
+
