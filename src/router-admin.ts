@@ -23,7 +23,7 @@ routerAdmin
   .post(
     "/signup",
     makeUploader("members").single("memberImage"),
-    restaurantController.processSignup,          // POST /admin/signup  → handles signup form submission
+    restaurantController.processSignup, // POST /admin/signup  → handles signup form submission
   );
 routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);
@@ -47,6 +47,16 @@ routerAdmin.post(
 );
 
 /** User  **/
-routerAdmin.get("/user/all", restaurantController.verifyRestaurant, restaurantController.getUsers)
+routerAdmin.get(
+  "/user/all",
+  restaurantController.verifyRestaurant,
+  restaurantController.getUsers,
+);
+
+routerAdmin.post(
+  "/user/edit",
+  restaurantController.verifyRestaurant,
+  restaurantController.updateChosenUser,
+);
 
 export default routerAdmin;
