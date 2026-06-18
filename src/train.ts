@@ -186,7 +186,26 @@ function sumOdds(num: number) {
   return count;
 }
 
-console.log(sumOdds(9));
-console.log(sumOdds(11));
+// console.log(sumOdds(9));
+// console.log(sumOdds(11));
 
 
+
+
+// V-TASK
+function countChars(str: string) {
+  const result: { [key: string]: number } = {};
+
+  for (const char of str) {
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(countChars("UZBEKISTAN"));
+console.log(countChars("apple"));
