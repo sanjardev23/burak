@@ -207,5 +207,21 @@ function countChars(str: string) {
   return result;
 }
 
-console.log(countChars("UZBEKISTAN"));
-console.log(countChars("apple"));
+// console.log(countChars("UZBEKISTAN"));
+// console.log(countChars("apple"));
+
+
+
+
+//W-TASK
+function chunkArray(arr: number[], size: number): number[][] {
+  const result: number[][] = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+
+  return result;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 3));
