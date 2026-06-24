@@ -45,4 +45,3 @@ export interface ProductUpdateInput {
   productImages?: string[];
   productViews?: number;
 }
-

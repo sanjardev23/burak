@@ -2,7 +2,6 @@ import path from "path";
 import multer from "multer";
 import { v4 } from "uuid";
 
-
 /** MULTER IMAGE UPLOADER **/
 function getTargetImageStorage(address: any) {
   return multer.diskStorage({
@@ -23,7 +22,6 @@ const makeUploader = (address: string) => {
 };
 
 export default makeUploader;
-
 
 /*.   it is only used for products images now
 const product_storage = multer.diskStorage({
