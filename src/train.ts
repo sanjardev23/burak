@@ -224,4 +224,24 @@ function chunkArray(arr: number[], size: number): number[][] {
   return result;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 3));
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 3));
+
+
+
+// X-TASK
+function countOccurrences(obj: any, target: string): number {
+  let count = 0;
+
+  for (const key in obj) {
+    if (key === target) {
+      count++;
+    }
+
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countOccurrences(obj[key], target);
+    }
+  }
+
+  return count;
+}
+console.log(countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK", size: 30 } }, "model"));
