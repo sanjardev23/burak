@@ -10,6 +10,7 @@ import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
 
 import session from "express-session";
@@ -29,6 +30,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public")));  // serves static files (images, css, js) from /public folder
 app.use(express.urlencoded({ extended: true }));          // lets express read data sent from HTML forms
 app.use(express.json());                                  // lets express read JSON data sent from React/API
+app.use(cookieParser());                                  // lets express read cookies
 app.use(morgan(MORGAN_FORMAT));                           // logs every request in terminal (method, url, status, time)
 
 
