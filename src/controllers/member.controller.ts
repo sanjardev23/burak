@@ -67,6 +67,22 @@ memberController.logout = async (req: ExtendenRequest, res: Response) => {
   }
 };
 
+memberController.getMemberDetails = async (
+  req: ExtendenRequest,
+  res: Response,
+) => {
+  try {
+    console.log("getMemberDetails");
+    const result = await memberService.getMemberDetails(req.member);
+
+    res.status(HttpCode.OK).json(result);
+  } catch (err) {
+    console.log("Error on getMemberDetails", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standart.code).json(Errors.standart);
+  }
+};
+
 memberController.verifyAuth = async (
   req: ExtendenRequest,
   res: Response,
