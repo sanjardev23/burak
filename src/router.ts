@@ -9,7 +9,17 @@ import express from "express";
 const router = express.Router(); // creates a mini-router (handles routes for the React SPA)
 import memberController from "./controllers/member.controller";
 
-router.post("/login", memberController.login);
-router.post("/signup", memberController.signup);
+//** Member **/
+// router.get("/member/check-me", memberController.checkAuthSession);
+
+router.post("/member/login", memberController.login);
+router.post("/member/signup", memberController.signup);
+router.get("/member/detail", memberController.verifyAuth);
+
+//** Product **/
+
+//** Order **/
+
+
 
 export default router;
