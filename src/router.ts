@@ -8,6 +8,7 @@
 import express from "express";
 const router = express.Router(); // creates a mini-router (handles routes for the React SPA)
 import memberController from "./controllers/member.controller";
+import uploader from "./libs/utils/uploader";
 
 //** Member **/
 // router.get("/member/check-me", memberController.checkAuthSession);
@@ -23,6 +24,12 @@ router.get(
   "/member/detail",
   memberController.verifyAuth,
   memberController.getMemberDetails,
+);
+router.post(
+  "/member/update",
+  memberController.verifyAuth,
+  uploader("members").single("memberImage"),
+  memberController.updateMember,
 );
 
 //** Product **/

@@ -17,7 +17,11 @@ class MemberService {
     this.memberModel = MemberModel; // connect to the Member collection in MongoDB
   }
 
-  /** SPA */
+  /**
+   * ==================================================
+   *                     SPA
+   * ==================================================
+   */
 
   public async signup(input: MemberInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
@@ -69,11 +73,28 @@ class MemberService {
 
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
+    return result;
+  }
+
+  public async updateMember(
+    member: Member,
+    input: MemberUpdateInput,
+  ): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    const result = await this.memberModel
+      .findOneAndUpdate({ _id: memberId }, input, { new: true })
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
     return result;
   }
 
-  /** SSR */
+  /**
+   * ==================================================
+   *                     SSR
+   * ==================================================
+   */
 
   public async processSignup(input: MemberInput): Promise<Member> {
     const exist = await this.memberModel

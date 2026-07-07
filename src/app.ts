@@ -28,6 +28,7 @@ const store = new MongoDBStore({
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));  // serves static files (images, css, js) from /public folder
+app.use("/uploads", express.static("uploads"));           // serves static files (images, css, js) from /uploads folder
 app.use(express.urlencoded({ extended: true }));          // lets express read data sent from HTML forms
 app.use(express.json());                                  // lets express read JSON data sent from React/API
 app.use(cookieParser());                                  // lets express read cookies

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "burak-redesign",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["--cwd", "/Users/sanjar23/burak-redesign", "start"],
+      "port": 3001
+    }
+  ]
+}
