@@ -8,6 +8,7 @@
 import express from "express";
 const router = express.Router(); // creates a mini-router (handles routes for the React SPA)
 import memberController from "./controllers/member.controller";
+import productController from "./controllers/product.controller";
 import uploader from "./libs/utils/uploader";
 
 //** Member **/
@@ -34,6 +35,7 @@ router.post(
 router.get("/member/top-users", memberController.getTopUsers);
 
 //** Product **/
+router.get("/product/all", productController.getProducts);
 
 //** Order **/
 
