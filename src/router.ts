@@ -10,6 +10,7 @@ const router = express.Router(); // creates a mini-router (handles routes for th
 import memberController from "./controllers/member.controller";
 import productController from "./controllers/product.controller";
 import uploader from "./libs/utils/uploader";
+import orderController from "./controllers/order.controller";
 
 //** Member **/
 // router.get("/member/check-me", memberController.checkAuthSession);
@@ -43,5 +44,10 @@ router.get(
 );
 
 //** Order **/
+router.post(
+  "/order/create",
+  memberController.verifyAuth,
+  orderController.createOrder,
+);
 
 export default router;
