@@ -5,6 +5,7 @@
  * Flow:     Request → middlewares (json, urlencoded, morgan) → router
  */
 
+import cors from "cors";
 import express from "express";
 import path from "path";
 import router from "./router";
@@ -24,13 +25,14 @@ const store = new MongoDBStore({
 });
 
 
-/** 1 - CREATE THE APP **/
+/** 1 - CREATE THE APP (entrance) **/
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));  // serves static files (images, css, js) from /public folder
 app.use("/uploads", express.static("uploads"));           // serves static files (images, css, js) from /uploads folder
 app.use(express.urlencoded({ extended: true }));          // lets express read data sent from HTML forms
 app.use(express.json());                                  // lets express read JSON data sent from React/API
+app.use(cors({ credentials: true, origin:true }));                                          // lets express read JSON data sent from React/API
 app.use(cookieParser());                                  // lets express read cookies
 app.use(morgan(MORGAN_FORMAT));                           // logs every request in terminal (method, url, status, time)
 
