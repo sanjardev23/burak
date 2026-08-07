@@ -111,11 +111,8 @@ class OrderService {
       orderStatus = input.orderStatus;
 
     const result = await this.orderModel
-      .findByIdAndUpdate(
-        {
-          memberId: memberId,
-          _id: orderId,
-        },
+      .findOneAndUpdate(
+        { _id: orderId, memberId: memberId },
         { orderStatus: orderStatus },
         { new: true },
       )
